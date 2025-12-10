@@ -1,6 +1,6 @@
 # Project Summary
 
-## Knowledge Graph-Based Product Substitution System
+## ShopSmart-Product Substitution System
 **Student Developer Assignment**
 
 ---
@@ -216,3 +216,4 @@ All requirements from the assignment have been implemented with:
 ---
 
 Date: December 10, 2025
+
