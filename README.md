@@ -1,4 +1,4 @@
-#ShopSmart-Product Substitution System
+# ShopSmart-Product Substitution System
 
 **Student Developer Assignment**
 
