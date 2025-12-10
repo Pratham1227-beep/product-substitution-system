@@ -232,7 +232,7 @@ data = load_products()
 # Display main header with gradient background
 st.markdown("""
     <div class="header-container">
-        <h1 class="header-title">Product Substitution System</h1>
+        <h1 class="header-title">ShopSmart-Product Substitution System</h1>
     </div>
 """, unsafe_allow_html=True)
 
@@ -434,4 +434,5 @@ st.markdown("""
         <p><strong>No ML, embeddings, or AI models used - Pure classical reasoning</strong></p>
     </div>
 """, unsafe_allow_html=True)
+
 
