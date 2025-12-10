@@ -1,21 +1,27 @@
+"""
+Product Substitution System - Streamlit Web Application
+"""
+
 import streamlit as st
 from kg_logic import KnowledgeGraph
 import json
 
-# Page configuration
+# Configure Streamlit page settings - wide layout for better use of space
 st.set_page_config(
     page_title="Product Substitution System",
     layout="wide"
 )
 
-# Custom CSS with enhanced styling
+# Define custom CSS for enhanced visual appearance
+# All styling is done with HTML/CSS for a polished, professional look
 st.markdown("""
     <style>
+    /* Main page background */
     .main {
         background-color: #f8f9fa;
     }
     
-    /* Header Styling */
+    /* Header Styling - Gradient purple background */
     .header-container {
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         padding: 2rem;
@@ -38,7 +44,7 @@ st.markdown("""
         margin-top: 0.5rem;
     }
     
-    /* Input Section */
+    /* Input Section Styling */
     .input-section {
         background: white;
         padding: 1.5rem;
@@ -47,6 +53,7 @@ st.markdown("""
         margin-bottom: 2rem;
     }
     
+    /* Section titles with bottom border */
     .section-title {
         font-size: 1.5rem;
         font-weight: 600;
@@ -56,7 +63,7 @@ st.markdown("""
         padding-bottom: 0.5rem;
     }
     
-    /* Product Card */
+    /* Product Card - Green border for in-stock products */
     .product-card {
         background: white;
         border-radius: 12px;
@@ -66,6 +73,7 @@ st.markdown("""
         border-left: 5px solid #4CAF50;
     }
     
+    /* Product Card - Red border for out-of-stock products */
     .product-card-out {
         background: white;
         border-radius: 12px;
@@ -75,6 +83,7 @@ st.markdown("""
         border-left: 5px solid #f44336;
     }
     
+    /* Product name styling */
     .product-name {
         font-size: 1.8rem;
         font-weight: 600;
@@ -82,6 +91,7 @@ st.markdown("""
         margin-bottom: 1rem;
     }
     
+    /* Product detail text */
     .product-detail {
         font-size: 1rem;
         color: #4a5568;
@@ -92,7 +102,7 @@ st.markdown("""
         color: #2d3748;
     }
     
-    /* Search Criteria Box */
+    /* Search Criteria Box - Gradient background with purple border */
     .criteria-box {
         background: linear-gradient(135deg, #f6f8fb 0%, #e9ecef 100%);
         padding: 1.5rem;
@@ -108,7 +118,7 @@ st.markdown("""
         margin-bottom: 1rem;
     }
     
-    /* Substitute Card */
+    /* Substitute Card - Blue border for alternative products */
     .substitute-card {
         background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
         border-radius: 12px;
@@ -125,7 +135,7 @@ st.markdown("""
         margin-bottom: 1rem;
     }
     
-    /* Explanation Box */
+    /* Explanation Box - Blue gradient for rule-based explanations */
     .explanation-box {
         background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
         padding: 1.2rem;
@@ -167,7 +177,7 @@ st.markdown("""
         display: inline-block;
     }
     
-    /* Footer */
+    /* Footer styling */
     .footer-box {
         background: white;
         padding: 2rem;
@@ -188,43 +198,65 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# Initialize Knowledge Graph
+# Load and cache the Knowledge Graph to avoid rebuilding on every interaction
+# The @st.cache_resource decorator ensures the KG is loaded only once
 @st.cache_resource
 def load_kg():
+    """
+    Load the Knowledge Graph from data.json
+    
+    Returns:
+        KnowledgeGraph: Initialized graph with products, categories, brands, and attributes
+    """
     return KnowledgeGraph("data.json")
 
+# Initialize the Knowledge Graph
 kg = load_kg()
 
-# Load product data
+# Load raw product data for UI display
+# Cached to avoid repeated file reads
 @st.cache_data
 def load_products():
+    """
+    Load product data from JSON file
+    
+    Returns:
+        dict: Product catalog with all product details
+    """
     with open("data.json", 'r', encoding='utf-8') as f:
         return json.load(f)
 
+# Load product data
 data = load_products()
 
-# Header
+# Display main header with gradient background
 st.markdown("""
     <div class="header-container">
         <h1 class="header-title">Product Substitution System</h1>
     </div>
 """, unsafe_allow_html=True)
 
-# Input Section
+# Display section title
 st.markdown('<div class="section-title">Find your products</div>', unsafe_allow_html=True)
 
-# Create columns for input controls
+# Create 4 columns for input controls - all on main page (no sidebar)
 col_input1, col_input2, col_input3, col_input4 = st.columns(4)
 
+# Column 1: Product Selection
 with col_input1:
+    # Get all product names and sort alphabetically
     all_products = sorted([p['name'] for p in data['products']])
+    
+    # Dropdown to select requested product
     requested_product = st.selectbox(
         "Requested Product",
         all_products,
         help="Select the product you want to purchase"
     )
 
+# Column 2: Price Constraint
 with col_input2:
+    # Numeric input for maximum acceptable price
     max_price = st.number_input(
         "Max Price (Rs.)",
         min_value=0,
@@ -234,43 +266,61 @@ with col_input2:
         help="Maximum acceptable price for substitutes"
     )
 
+# Column 3: Required Attributes/Tags
 with col_input3:
+    # Get all unique attributes from all products
     all_attributes = sorted(list(set([attr for p in data['products'] for attr in p['attributes']])))
+    
+    # Multi-select for required attributes (must-have tags)
     required_tags = st.multiselect(
         "Required Tags",
         all_attributes,
         help="Select must-have attributes"
     )
 
+# Column 4: Brand Preference
 with col_input4:
+    # Get all unique brands
     all_brands = sorted(list(set([p['brand'] for p in data['products']])))
+    
+    # Dropdown for optional brand preference
     preferred_brand_option = st.selectbox(
         "Preferred Brand",
         ["None"] + all_brands,
         help="Select if you prefer a specific brand"
     )
+    
+    # Convert "None" string to actual None value
     preferred_brand = None if preferred_brand_option == "None" else preferred_brand_option
 
-# Find Alternatives Button
+# SEARCH BUTTON
+# Separator line
 st.markdown("---")
+
+# Primary action button to trigger search
 search_button = st.button("Find Alternatives", type="primary", use_container_width=True)
 
+# Separator line
 st.markdown("---")
 
-# Product Information Section
+# PRODUCT INFORMATION SECTION
+# Display section title
 st.markdown('<div class="section-title">Product Information</div>', unsafe_allow_html=True)
 
+# Create 2 columns: Product details (left) and Search criteria (right)
 col1, col2 = st.columns([2, 1])
 
+# Left Column: Product Details
 with col1:
-    # Get product details
+    # Get product details from Knowledge Graph
     product_details = kg.get_product_details(requested_product)
     
     if product_details:
+        # Check if product is in stock
         in_stock = product_details.get('in_stock', False)
         
         if in_stock:
-            # Product is in stock
+            # Display in-stock product card (green border)
             st.markdown(f"""
                 <div class="product-card">
                     <div class="product-name">{requested_product}</div>
@@ -284,7 +334,7 @@ with col1:
                 </div>
             """, unsafe_allow_html=True)
         else:
-            # Out of Stock
+            # Display out-of-stock product card (red border)
             st.markdown(f"""
                 <div class="product-card-out">
                     <div class="product-name">{requested_product}</div>
@@ -298,7 +348,9 @@ with col1:
                 </div>
             """, unsafe_allow_html=True)
 
+# Right Column: Search Criteria Summary
 with col2:
+    # Display user's search criteria in a styled box
     st.markdown(f"""
         <div class="criteria-box">
             <div class="criteria-title">Search Criteria</div>
@@ -311,22 +363,27 @@ with col2:
         </div>
     """, unsafe_allow_html=True)
 
-# Search Results
+# SEARCH RESULTS SECTION
+# This section only displays when the "Find Alternatives" button is clicked
 if search_button:
+    # Separator line
     st.markdown("---")
+    
+    # Display section title
     st.markdown('<div class="section-title">Search Results</div>', unsafe_allow_html=True)
     
-    # Check if product is in stock
+    # Stage 1: Check if product is in stock (exact match)
     if kg.check_exact_match(requested_product):
-        # Stage 1: Exact Match - Product is available
+        # Product is available - no substitutes needed
         st.success(f"**{requested_product}** is currently **In Stock**!")
-        st.balloons()
+        st.balloons()  # Celebration animation
         st.info("No substitutes needed - the requested product is available.")
     else:
         # Product is out of stock - find substitutes
         st.error(f"**{requested_product}** is currently **Out of Stock**. Here are the best alternatives:")
         
-        # Find substitutes using Knowledge Graph
+        # Call Knowledge Graph to find substitutes
+        # Uses multi-stage traversal: same category -> related categories
         substitutes = kg.find_substitutes(
             requested_product,
             max_price,
@@ -335,18 +392,22 @@ if search_button:
         )
         
         if not substitutes:
-            # No alternatives found
+            # No alternatives found matching criteria
             st.warning("**No suitable alternatives found.**")
             st.info("We couldn't find any products that match all your criteria.")
+            
+            # Provide suggestions to user
             st.write("**Suggestions:**")
             st.write("• Increase your maximum price")
             st.write("• Remove some required tags")
             st.write("• Try selecting a different brand preference")
         else:
-            # Display substitutes
+            # Display found substitutes (up to 3)
             st.success(f"Found **{len(substitutes)}** alternative(s):")
             
+            # Loop through each substitute and display details
             for idx, sub in enumerate(substitutes, 1):
+                # Display substitute card with all details
                 st.markdown(f"""
                     <div class="substitute-card">
                         <div class="substitute-header">#{idx} {sub['name']}</div>
@@ -362,7 +423,8 @@ if search_button:
                     </div>
                 """, unsafe_allow_html=True)
 
-# Footer
+# FOOTER SECTION
+# Display system architecture information
 st.markdown("---")
 st.markdown("""
     <div class="footer-box">
