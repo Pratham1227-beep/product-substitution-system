@@ -1,4 +1,3 @@
-
 import networkx as nx
 import json
 from typing import List, Dict, Optional, Tuple
@@ -571,3 +570,4 @@ class KnowledgeGraph:
         props['attributes'] = self.get_product_attributes(product)
         
         return props
+
