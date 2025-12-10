@@ -1,5 +1,5 @@
 """
-Product Substitution System - Streamlit Web Application
+ShopSmart-Product Substitution System - Streamlit Web Application
 """
 
 import streamlit as st
@@ -434,3 +434,4 @@ st.markdown("""
         <p><strong>No ML, embeddings, or AI models used - Pure classical reasoning</strong></p>
     </div>
 """, unsafe_allow_html=True)
+
