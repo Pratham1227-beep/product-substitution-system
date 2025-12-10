@@ -1,0 +1,601 @@
+{
+    "products": [
+        {
+            "id": "p1",
+            "name": "Amul Butter",
+            "category": "Dairy",
+            "brand": "Amul",
+            "price": 56,
+            "stock": 0,
+            "attributes": [
+                "veg",
+                "lactose",
+                "salted"
+            ]
+        },
+        {
+            "id": "p2",
+            "name": "Mother Dairy Butter",
+            "category": "Dairy",
+            "brand": "Mother Dairy",
+            "price": 54,
+            "stock": 10,
+            "attributes": [
+                "veg",
+                "lactose",
+                "salted"
+            ]
+        },
+        {
+            "id": "p3",
+            "name": "Nutralite Fat Spread",
+            "category": "Dairy",
+            "brand": "Nutralite",
+            "price": 45,
+            "stock": 15,
+            "attributes": [
+                "veg",
+                "low_cholesterol",
+                "low_fat"
+            ]
+        },
+        {
+            "id": "p4",
+            "name": "Amul Cheese Slices",
+            "category": "Dairy",
+            "brand": "Amul",
+            "price": 140,
+            "stock": 0,
+            "attributes": [
+                "veg",
+                "lactose",
+                "processed"
+            ]
+        },
+        {
+            "id": "p5",
+            "name": "Britannia Cheese Cubes",
+            "category": "Dairy",
+            "brand": "Britannia",
+            "price": 135,
+            "stock": 0,
+            "attributes": [
+                "veg",
+                "lactose",
+                "processed"
+            ]
+        },
+        {
+            "id": "p6",
+            "name": "Gowardhan Paneer",
+            "category": "Dairy",
+            "brand": "Gowardhan",
+            "price": 90,
+            "stock": 20,
+            "attributes": [
+                "veg",
+                "lactose",
+                "protein_rich"
+            ]
+        },
+        {
+            "id": "p7",
+            "name": "Amul Malai Paneer",
+            "category": "Dairy",
+            "brand": "Amul",
+            "price": 95,
+            "stock": 8,
+            "attributes": [
+                "veg",
+                "lactose",
+                "protein_rich"
+            ]
+        },
+        {
+            "id": "p8",
+            "name": "Mother Dairy Toned Milk",
+            "category": "Dairy",
+            "brand": "Mother Dairy",
+            "price": 30,
+            "stock": 0,
+            "attributes": [
+                "veg",
+                "lactose",
+                "low_fat"
+            ]
+        },
+        {
+            "id": "p9",
+            "name": "Amul Gold Milk",
+            "category": "Dairy",
+            "brand": "Amul",
+            "price": 34,
+            "stock": 0,
+            "attributes": [
+                "veg",
+                "lactose",
+                "full_cream"
+            ]
+        },
+        {
+            "id": "p10",
+            "name": "Nestle Slim Dahi",
+            "category": "Dairy",
+            "brand": "Nestle",
+            "price": 40,
+            "stock": 12,
+            "attributes": [
+                "veg",
+                "lactose",
+                "low_fat",
+                "probiotic"
+            ]
+        },
+        {
+            "id": "p11",
+            "name": "Amul Fresh Cream",
+            "category": "Dairy",
+            "brand": "Amul",
+            "price": 65,
+            "stock": 0,
+            "attributes": [
+                "veg",
+                "lactose",
+                "full_cream"
+            ]
+        },
+        {
+            "id": "p12",
+            "name": "Mother Dairy Ghee",
+            "category": "Dairy",
+            "brand": "Mother Dairy",
+            "price": 550,
+            "stock": 5,
+            "attributes": [
+                "veg",
+                "lactose",
+                "traditional"
+            ]
+        },
+        {
+            "id": "p13",
+            "name": "Britannia White Bread",
+            "category": "Bakery",
+            "brand": "Britannia",
+            "price": 30,
+            "stock": 0,
+            "attributes": [
+                "veg",
+                "refined_flour"
+            ]
+        },
+        {
+            "id": "p14",
+            "name": "Modern Brown Bread",
+            "category": "Bakery",
+            "brand": "Modern",
+            "price": 35,
+            "stock": 0,
+            "attributes": [
+                "veg",
+                "whole_wheat",
+                "fiber_rich"
+            ]
+        },
+        {
+            "id": "p15",
+            "name": "English Oven Multigrain",
+            "category": "Bakery",
+            "brand": "English Oven",
+            "price": 45,
+            "stock": 8,
+            "attributes": [
+                "veg",
+                "multigrain",
+                "healthy"
+            ]
+        },
+        {
+            "id": "p16",
+            "name": "Harvest Gold Burger Buns",
+            "category": "Bakery",
+            "brand": "Harvest Gold",
+            "price": 25,
+            "stock": 15,
+            "attributes": [
+                "veg",
+                "refined_flour"
+            ]
+        },
+        {
+            "id": "p17",
+            "name": "Britannia Fruit Cake",
+            "category": "Bakery",
+            "brand": "Britannia",
+            "price": 120,
+            "stock": 0,
+            "attributes": [
+                "contains_egg",
+                "sugar"
+            ]
+        },
+        {
+            "id": "p18",
+            "name": "Parle Rusk",
+            "category": "Bakery",
+            "brand": "Parle",
+            "price": 40,
+            "stock": 25,
+            "attributes": [
+                "veg",
+                "crispy",
+                "tea_snack"
+            ]
+        },
+        {
+            "id": "p19",
+            "name": "Elite Plum Cake",
+            "category": "Bakery",
+            "brand": "Elite",
+            "price": 250,
+            "stock": 0,
+            "attributes": [
+                "contains_egg",
+                "sugar",
+                "premium"
+            ]
+        },
+        {
+            "id": "p20",
+            "name": "Pillsbury Choco Cookie",
+            "category": "Bakery",
+            "brand": "Pillsbury",
+            "price": 90,
+            "stock": 10,
+            "attributes": [
+                "veg",
+                "chocolate",
+                "sugar"
+            ]
+        },
+        {
+            "id": "p21",
+            "name": "Raw Pressery Almond Milk",
+            "category": "NonDairyMilk",
+            "brand": "Raw Pressery",
+            "price": 100,
+            "stock": 8,
+            "attributes": [
+                "veg",
+                "lactose_free",
+                "vegan",
+                "sugar_free"
+            ]
+        },
+        {
+            "id": "p22",
+            "name": "Sofit Soya Milk",
+            "category": "NonDairyMilk",
+            "brand": "Sofit",
+            "price": 110,
+            "stock": 12,
+            "attributes": [
+                "veg",
+                "lactose_free",
+                "vegan",
+                "protein_rich"
+            ]
+        },
+        {
+            "id": "p23",
+            "name": "Epigamia Coconut Yogurt",
+            "category": "NonDairyMilk",
+            "brand": "Epigamia",
+            "price": 70,
+            "stock": 0,
+            "attributes": [
+                "veg",
+                "lactose_free",
+                "vegan",
+                "probiotic"
+            ]
+        },
+        {
+            "id": "p24",
+            "name": "Urban Platter Oat Milk",
+            "category": "NonDairyMilk",
+            "brand": "Urban Platter",
+            "price": 120,
+            "stock": 6,
+            "attributes": [
+                "veg",
+                "lactose_free",
+                "vegan",
+                "fiber_rich"
+            ]
+        },
+        {
+            "id": "p25",
+            "name": "Lays Classic Salted",
+            "category": "Snack",
+            "brand": "Lays",
+            "price": 20,
+            "stock": 0,
+            "attributes": [
+                "veg",
+                "fried",
+                "salty"
+            ]
+        },
+        {
+            "id": "p26",
+            "name": "Lays Magic Masala",
+            "category": "Snack",
+            "brand": "Lays",
+            "price": 20,
+            "stock": 0,
+            "attributes": [
+                "veg",
+                "fried",
+                "spicy"
+            ]
+        },
+        {
+            "id": "p27",
+            "name": "Balaji Wafers Masala",
+            "category": "Snack",
+            "brand": "Balaji",
+            "price": 15,
+            "stock": 40,
+            "attributes": [
+                "veg",
+                "fried",
+                "spicy"
+            ]
+        },
+        {
+            "id": "p28",
+            "name": "Pringles Original",
+            "category": "Snack",
+            "brand": "Pringles",
+            "price": 110,
+            "stock": 0,
+            "attributes": [
+                "veg",
+                "fried",
+                "imported"
+            ]
+        },
+        {
+            "id": "p29",
+            "name": "Doritos Nacho Cheese",
+            "category": "Snack",
+            "brand": "Doritos",
+            "price": 50,
+            "stock": 0,
+            "attributes": [
+                "veg",
+                "corn",
+                "cheese_flavor"
+            ]
+        },
+        {
+            "id": "p30",
+            "name": "Cornitos Jalapeno",
+            "category": "Snack",
+            "brand": "Cornitos",
+            "price": 60,
+            "stock": 12,
+            "attributes": [
+                "veg",
+                "corn",
+                "spicy",
+                "gluten_free"
+            ]
+        },
+        {
+            "id": "p31",
+            "name": "Haldiram Aloo Bhujia",
+            "category": "Snack",
+            "brand": "Haldiram",
+            "price": 100,
+            "stock": 30,
+            "attributes": [
+                "veg",
+                "fried",
+                "spicy",
+                "traditional"
+            ]
+        },
+        {
+            "id": "p32",
+            "name": "Bikaji Bhujia Sev",
+            "category": "Snack",
+            "brand": "Bikaji",
+            "price": 95,
+            "stock": 20,
+            "attributes": [
+                "veg",
+                "fried",
+                "spicy",
+                "traditional"
+            ]
+        },
+        {
+            "id": "p33",
+            "name": "Act II Popcorn Butter",
+            "category": "Snack",
+            "brand": "Act II",
+            "price": 35,
+            "stock": 0,
+            "attributes": [
+                "veg",
+                "instant",
+                "buttery"
+            ]
+        },
+        {
+            "id": "p34",
+            "name": "Kurkure Masala Munch",
+            "category": "Snack",
+            "brand": "Kurkure",
+            "price": 20,
+            "stock": 50,
+            "attributes": [
+                "veg",
+                "fried",
+                "spicy"
+            ]
+        },
+        {
+            "id": "p35",
+            "name": "Coca Cola 750ml",
+            "category": "Beverages",
+            "brand": "Coca Cola",
+            "price": 40,
+            "stock": 0,
+            "attributes": [
+                "veg",
+                "sugar",
+                "caffeine",
+                "carbonated"
+            ]
+        },
+        {
+            "id": "p36",
+            "name": "Pepsi 750ml",
+            "category": "Beverages",
+            "brand": "Pepsi",
+            "price": 38,
+            "stock": 24,
+            "attributes": [
+                "veg",
+                "sugar",
+                "caffeine",
+                "carbonated"
+            ]
+        },
+        {
+            "id": "p37",
+            "name": "Thums Up 750ml",
+            "category": "Beverages",
+            "brand": "Coca Cola",
+            "price": 40,
+            "stock": 10,
+            "attributes": [
+                "veg",
+                "sugar",
+                "caffeine",
+                "strong"
+            ]
+        },
+        {
+            "id": "p38",
+            "name": "Diet Coke",
+            "category": "Beverages",
+            "brand": "Coca Cola",
+            "price": 50,
+            "stock": 0,
+            "attributes": [
+                "veg",
+                "sugar_free",
+                "caffeine",
+                "carbonated"
+            ]
+        },
+        {
+            "id": "p39",
+            "name": "Red Bull Energy Drink",
+            "category": "Beverages",
+            "brand": "Red Bull",
+            "price": 125,
+            "stock": 0,
+            "attributes": [
+                "veg",
+                "sugar",
+                "high_caffeine",
+                "energy"
+            ]
+        },
+        {
+            "id": "p40",
+            "name": "Monster Energy",
+            "category": "Beverages",
+            "brand": "Monster",
+            "price": 110,
+            "stock": 0,
+            "attributes": [
+                "veg",
+                "sugar",
+                "high_caffeine",
+                "energy"
+            ]
+        },
+        {
+            "id": "p41",
+            "name": "Real Mixed Fruit Juice",
+            "category": "Beverages",
+            "brand": "Real",
+            "price": 110,
+            "stock": 18,
+            "attributes": [
+                "veg",
+                "fruit",
+                "vitamin_c",
+                "no_fizz"
+            ]
+        },
+        {
+            "id": "p42",
+            "name": "Tropicana Orange Juice",
+            "category": "Beverages",
+            "brand": "Tropicana",
+            "price": 120,
+            "stock": 10,
+            "attributes": [
+                "veg",
+                "fruit",
+                "vitamin_c",
+                "no_fizz"
+            ]
+        }
+    ],
+    "category_relations": [
+        {
+            "source": "Dairy",
+            "target": "NonDairyMilk",
+            "type": "IS_SIMILAR_TO",
+            "weight": 0.7
+        },
+        {
+            "source": "NonDairyMilk",
+            "target": "Dairy",
+            "type": "IS_SIMILAR_TO",
+            "weight": 0.7
+        },
+        {
+            "source": "Bakery",
+            "target": "Snack",
+            "type": "IS_SIMILAR_TO",
+            "weight": 0.5
+        },
+        {
+            "source": "Snack",
+            "target": "Bakery",
+            "type": "IS_SIMILAR_TO",
+            "weight": 0.5
+        },
+        {
+            "source": "Beverages",
+            "target": "Dairy",
+            "type": "IS_SIMILAR_TO",
+            "weight": 0.4
+        },
+        {
+            "source": "Dairy",
+            "target": "Beverages",
+            "type": "IS_SIMILAR_TO",
+            "weight": 0.4
+        }
+    ]
+}
