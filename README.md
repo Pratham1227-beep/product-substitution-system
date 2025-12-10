@@ -1,4 +1,4 @@
-# Knowledge Graph-Based Product Substitution System
+#ShopSmart-Product Substitution System
 
 **Student Developer Assignment**
 
